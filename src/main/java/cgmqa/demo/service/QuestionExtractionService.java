@@ -42,8 +42,8 @@ public class QuestionExtractionService implements QuestionExtractor {
       throw new IllegalArgumentException("Invalid question format");
     }
     String question = questionAnswersString.substring(0, questionAnswersString.indexOf(separator) + 1);
-    if (question.length() > 255 || question.length() == 0) {
-      throw new IllegalArgumentException("Question should contain 1 to 255 characters");
+    if (question.length() > 255) {
+      throw new IllegalArgumentException("Question should contain upto 255 characters");
     }
     String answersString = questionAnswersString.substring(questionAnswersString.indexOf(separator) + 1);
     List<String> answers = extractAnswers(answersString);
@@ -52,8 +52,8 @@ public class QuestionExtractionService implements QuestionExtractor {
       throw new IllegalArgumentException("Question should have at-least one answer");
     }
     answers.forEach(answerString -> {
-      if (answerString.length() > 255 || answerString.length() == 0) {
-        throw new IllegalArgumentException("Answer should contain 1 to 255 characters");
+      if (answerString.length() > 255) {
+        throw new IllegalArgumentException("Answer should contain upto 255 characters");
       }
     });
 

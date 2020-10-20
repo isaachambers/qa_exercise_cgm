@@ -41,19 +41,19 @@ public class QuestionExtractionServiceTest {
     Throwable thrown = catchThrowable(() -> extractionService.extractQuestion(testInput));
 
     assertThat(thrown).isInstanceOf(IllegalArgumentException.class);
-    assertThat(thrown.getMessage()).isEqualTo("Question should contain 1 to 255 characters");
+    assertThat(thrown.getMessage()).isEqualTo("Question should contain upto 255 characters");
   }
 
   @Test
   @DisplayName("Should throw exception if any answer exceeds 255 characters")
-  public void shouldThrowExceptionWhenAnyAnswerExceedsAllowedChars() {
-    String longAnswer = "t7qDUWiUmARvpDMCP2df7pnGbsd8jb0XfH2MJeCEMGx8zinPJA73aEsOUiQJGDdJAKbX204S2e2DHryL0RM5QBePNXmlCgzxDsLOQZ4cjl05pBkK7h50VJvp0mTacOxuYJ92rcskBXNnjWWtLACHkmkTO2kKsimr7vgjbt04p6jX4rkKRBpFcv0g4sijrDKkJaQHx4eHEyTRZ8ZASBFvk0XS5SvwhpBhecyBSSq7lEOlLPBNZyWOLj2h0ziCBBlw";
+  public void shouldThrowExceptionWhenAnyAnswerChars() {
+    String longAnswer = "t7qDUWiUmARpDMCP2df7pnGbsd8jb0XfH2MJeCEMGx8zinPJA73aEsOUiQJGDdJAKbX204S2e2DHryL0RM5QBePNXmlCgzxDsLOQZ4cjl05pBkK7h50VJvp0mTacOxuYJ92rcskBXNnjWWtLACHkmkTO2kKsimr7vgjbt04p6jX4rkKRBpFcv0g4sijrDKkJaQHx4eHEyTRZ8ZASBFvk0XS5SvwhpBhecyBSSq7lEOlLPBNZyWOLj2h0ziCBBlwe";
     String testInput = "What is Peters favorite food? \"Pizza\" \"Spaghetti\" \"" + longAnswer + "\"";
 
     Throwable thrown = catchThrowable(() -> extractionService.extractQuestion(testInput));
 
     assertThat(thrown).isInstanceOf(IllegalArgumentException.class);
-    assertThat(thrown.getMessage()).isEqualTo("Answer should contain 1 to 255 characters");
+    assertThat(thrown.getMessage()).isEqualTo("Answer should contain upto 255 characters");
   }
 
   @Test
