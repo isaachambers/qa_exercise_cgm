@@ -14,4 +14,9 @@ repositories {
 dependencies {
     testCompile("org.assertj:assertj-core:3.9.0")
     testCompile("org.junit.jupiter:junit-jupiter-engine:5.3.2")
+    testCompile('org.junit.jupiter:junit-jupiter:5.6.0')
+}
+
+test {
+    useJUnitPlatform()
 }
