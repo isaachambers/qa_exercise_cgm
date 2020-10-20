@@ -19,6 +19,11 @@ public class QuestionResponseService {
     return questionResponseService;
   }
 
+  /**
+   * @param questionString    String containing question and answer in the format <question>? "<answer1>" "<answer2>" "<answerX>"
+   * @param questionExtractor any question extractor object that implements the QuestionExtractor interface
+   * @return
+   */
   public boolean addQuestion(String questionString, QuestionExtractor questionExtractor) {
     try {
       Question question = questionExtractor.extractQuestion(questionString);
