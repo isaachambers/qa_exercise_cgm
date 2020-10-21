@@ -34,6 +34,7 @@ pipeline {
             steps {
               script {
                      try {
+                          sh 'chmod +x gradlew'
                           sh 'gradle build'
                           sh 'gradle test jacocoTestReport'
                       } finally {
