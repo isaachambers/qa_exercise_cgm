@@ -1,4 +1,4 @@
-Coding Exercise for CGM
+Coding Exercise for:
 
 
 How to run the tests:
