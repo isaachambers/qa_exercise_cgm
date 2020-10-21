@@ -1,7 +1,7 @@
 void setBuildStatus(String message, String state) {
   step([
       $class: "GitHubCommitStatusSetter",
-      reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/isaachambers/qa_exercise_cgm"],
+      reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/isaachambers/qa_exercise_cgm.git"],
       contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "ci/jenkins/build-status"],
       errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
       statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
@@ -35,7 +35,7 @@ pipeline {
               script {
                      try {
                           sh 'chmod +x gradlew'
-                          sh 'gradle build'
+                          sh './gradlew build -x test --no-daemon '
                           sh 'gradle test jacocoTestReport'
                       } finally {
                           junit '**/build/test-results/test/*.xml'
