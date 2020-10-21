@@ -29,12 +29,12 @@ pipeline {
               }
             }
         }
-        stage('Build & ') {
+        stage('Build & Test') {
             steps {
               script {
                      try {
                           sh 'chmod +x gradlew'
-                          sh './gradlew build '
+                          sh './gradlew build'
                           sh './gradlew test jacocoTestReport'
                       } finally {
                           junit '**/build/test-results/test/*.xml'
