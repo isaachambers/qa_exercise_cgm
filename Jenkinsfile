@@ -35,8 +35,8 @@ pipeline {
               script {
                      try {
                           sh 'chmod +x gradlew'
-                          sh './gradlew build -x test --no-daemon '
-                          sh 'gradle test jacocoTestReport'
+                          sh './gradlew build'
+                          sh './gradlew test jacocoTestReport'
                       } finally {
                           junit '**/build/test-results/test/*.xml'
                       }
