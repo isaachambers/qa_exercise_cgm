@@ -61,7 +61,7 @@ pipeline {
         }
         stage('Cleaning up') {
             steps {
-               sh "docker rmi $registry"
+               sh "docker rmi $registry" + ":$DOCKER_UNIQUE_TAG"
             }
         }
     }
