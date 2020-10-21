@@ -33,9 +33,9 @@ pipeline {
             steps {
               script {
                      try {
-                          sh 'chmod +x gradlew'
-                          sh './gradle build -x test --no-daemon migrateDev'
-                          sh './gradle test jacocoTestReport --no-daemon'
+//                           sh 'chmod +x gradlew'
+                          sh 'gradle build -x test --no-daemon migrateDev'
+                          sh 'gradle test jacocoTestReport --no-daemon'
                       } finally {
                           junit '**/build/test-results/test/*.xml'
                       }
