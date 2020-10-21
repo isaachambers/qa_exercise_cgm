@@ -15,6 +15,7 @@ pipeline {
     }
 
     environment {
+      registry = "isaack/cgm_exercise"
       dockerImage = ''
       GIT_HASH = sh(returnStdout: true, script: "git rev-parse HEAD").trim()
       DOCKER_UNIQUE_TAG = "${env.GIT_HASH}-${env.BUILD_NUMBER}"
@@ -33,7 +34,6 @@ pipeline {
             steps {
               script {
                      try {
-//                           sh 'chmod +x gradlew'
                           sh 'gradle build'
                           sh 'gradle test jacocoTestReport'
                       } finally {
