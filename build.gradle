@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id 'jacoco'
+    id 'com.palantir.docker' version '0.25.0'
+    id 'com.palantir.docker-run' version '0.25.0'
 }
 
 group 'cgm_exercise'
@@ -33,4 +35,17 @@ jacocoTestReport {
         csv.enabled false
         html.destination file("${buildDir}/jacocoHtml")
     }
+}
+
+jar {
+    baseName = 'qa_exercise'
+    version = version
+}
+
+String imageName = "demo/qa-exercise:$version"
+
+docker {
+    name imageName
+    files "build/libs/${jar.archiveFileName.get()}"
+    buildArgs([JAR_FILE: jar.archiveFileName.get()])
 }
