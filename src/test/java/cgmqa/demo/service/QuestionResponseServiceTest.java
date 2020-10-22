@@ -5,21 +5,22 @@ import static org.assertj.core.api.Assertions.catchThrowable;
 
 
 import cgmqa.demo.model.Question;
+import cgmqa.demo.service.impl.QuestionExtractorImpl;
 import java.util.Optional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class QuestionResponseServiceTest {
 
-  private QuestionResponseService questionResponseService = QuestionResponseService.getInstance();
-  private static QuestionExtractionService questionExtractionService = QuestionExtractionService.getInstance();
+  private QuestionResponseService questionResponseService = new QuestionResponseService();
+  private static QuestionExtractorImpl questionExtractorImpl = new QuestionExtractorImpl();
 
   @Test
   @DisplayName("Should add question by question name")
   void shouldAddQuestion() {
     String testInputQuestion = "What is Peters favorite food? \"Pizza\" \"Spaghetti\" \"Ice cream\"";
 
-    boolean addQuestion = questionResponseService.addQuestion(testInputQuestion, questionExtractionService);
+    boolean addQuestion = questionResponseService.addQuestion(testInputQuestion, questionExtractorImpl);
 
     assertThat(addQuestion).isTrue();
   }
@@ -28,7 +29,7 @@ class QuestionResponseServiceTest {
   @DisplayName("Should get added question by name")
   void shouldGetQuestionByQuestionName() {
     String testInputQuestion = "What is Peters favorite food? \"Pizza\" \"Spaghetti\" \"Ice cream\"";
-    questionResponseService.addQuestion(testInputQuestion, questionExtractionService);
+    questionResponseService.addQuestion(testInputQuestion, questionExtractorImpl);
 
     Optional<Question> question = questionResponseService.getQuestionByName("What is Peters favorite food?");
 
@@ -40,9 +41,10 @@ class QuestionResponseServiceTest {
   void shouldThrowExceptionWhenQuestionInvalid() {
     String testInputQuestion = "What is Peters favorite food \"Pizza\" \"Spaghetti\" \"Ice cream\"";
 
-    Throwable thrown = catchThrowable(() -> questionResponseService.addQuestion(testInputQuestion, questionExtractionService));
+    Throwable thrown = catchThrowable(() -> questionResponseService.addQuestion(testInputQuestion, questionExtractorImpl));
 
     assertThat(thrown).isInstanceOf(IllegalArgumentException.class);
+    assertThat(thrown.getMessage()).isEqualTo("Invalid question format");
   }
 
 }

@@ -6,17 +6,10 @@ import java.util.Optional;
 
 public class QuestionResponseService {
 
-  private static QuestionResponseService questionResponseService;
-  private static QuestionRepository questionRepository = QuestionRepository.getInstance();
+  private QuestionRepository questionRepository;
 
-  private QuestionResponseService() {
-  }
-
-  public static QuestionResponseService getInstance() {
-    if (questionResponseService == null) {
-      questionResponseService = new QuestionResponseService();
-    }
-    return questionResponseService;
+  public QuestionResponseService() {
+    questionRepository = new QuestionRepository();
   }
 
   /**

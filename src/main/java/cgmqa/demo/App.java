@@ -1,59 +1,45 @@
 package cgmqa.demo;
 
-import cgmqa.demo.service.QuestionExtractionService;
+import cgmqa.demo.model.Question;
+import cgmqa.demo.service.impl.QuestionExtractorImpl;
 import cgmqa.demo.service.QuestionResponseService;
-import java.util.Scanner;
+import cgmqa.demo.utils.OutputInputUtil;
+import java.util.Optional;
 
 public class App {
 
-  private static QuestionExtractionService questionExtractionService = QuestionExtractionService.getInstance();
-  private static QuestionResponseService questionResponseService = QuestionResponseService.getInstance();
-
   public static void main(String args[]) {
 
+    QuestionExtractorImpl questionExtractorImpl = new QuestionExtractorImpl();
+    QuestionResponseService questionResponseService = new QuestionResponseService();
+
     String userInput;
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("***** Welcome to Q&A *****");
-    displayOptions();
-    boolean keepRunning = true;
+    OutputInputUtil.displayDefaultOptions();
 
-    while (keepRunning) {
-      userInput = scanner.next();
-      switch (userInput) {
-        case "1":
-          System.out.println("Type your question");
-          String userQuestionAndAnswers = new Scanner(System.in).nextLine();
-          if (questionResponseService.addQuestion(userQuestionAndAnswers, questionExtractionService)) {
-            System.out.println("Question added");
-            displayOptions();
-          }
-          break;
-        case "2":
-          System.out.println("What is your question?");
-          String questionString = new Scanner(System.in).nextLine();
-          questionResponseService.getQuestionByName(questionString).ifPresentOrElse(question -> {
-            question.getAnswers().forEach(answer -> {
-              System.out.println("\u2022 " + answer);
-            });
-          }, () -> {
-            System.out.println("the answer to life, universe and everything is 42");
+    userInput = OutputInputUtil.getInput();
+    switch (userInput) {
+      case "1":
+        OutputInputUtil.printMessage("Type your question");
+        String userQuestionAndAnswers = OutputInputUtil.getInputLineAsString();
+        if (questionResponseService.addQuestion(userQuestionAndAnswers, questionExtractorImpl)) {
+          OutputInputUtil.printMessage("Question added");
+        }
+        break;
+      case "2":
+        OutputInputUtil.printMessage("What is your question?");
+        String questionString = OutputInputUtil.getInputLineAsString();
+        Optional<Question> question = questionResponseService.getQuestionByName(questionString);
+        if (question.isPresent()) {
+          question.get().getAnswers().forEach(answer -> {
+            OutputInputUtil.printMessage("\u2022 " + answer.getAnswer());
           });
-          displayOptions();
-          break;
-        case "3":
-          keepRunning = false;
-          System.out.println("Shutting down");
-          System.exit(0);
-        default:
-          System.exit(0);
-      }
+        } else {
+          OutputInputUtil.printMessage("the answer to life, universe and everything is 42");
+        }
+        break;
+      default:
+        System.exit(0);
     }
-  }
-
-  public static void displayOptions() {
-    System.out.println("* Insert 1 to Add a question");
-    System.out.println("* Insert 2 to Ask a question which is not in the system");
-    System.out.println("* Insert 3 to exit");
   }
 
 }

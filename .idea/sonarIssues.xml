@@ -58,6 +58,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/cgmqa/demo/PrintScreenUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/cgmqa/demo/model/Answer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/cgmqa/demo/model/Question.java">
           <value>
             <set />
@@ -88,7 +98,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/cgmqa/demo/service/QuestionExtractorImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/cgmqa/demo/service/QuestionResponseService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/cgmqa/demo/service/impl/QuestionExtractorImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/cgmqa/demo/utils/OutputInputUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/cgmqa/demo/utils/PrintScreenUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/cgmqa/demo/AppTest.java">
           <value>
             <set />
           </value>
@@ -103,7 +138,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/cgmqa/demo/service/QuestionExtractorImplTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/test/java/cgmqa/demo/service/QuestionResponseServiceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/cgmqa/demo/utils/OutputInputUtilTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/cgmqa/demo/utils/PrintScreenUtilTest.java">
           <value>
             <set />
           </value>

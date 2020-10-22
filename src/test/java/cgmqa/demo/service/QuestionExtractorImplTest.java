@@ -4,14 +4,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 
 
+import cgmqa.demo.model.Answer;
 import cgmqa.demo.model.Question;
+import cgmqa.demo.service.impl.QuestionExtractorImpl;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class QuestionExtractionServiceTest {
+public class QuestionExtractorImplTest {
 
-  private QuestionExtractionService extractionService = QuestionExtractionService.getInstance();
+  private QuestionExtractorImpl extractionService = new QuestionExtractorImpl();
 
   @Test
   @DisplayName("Should correctly extract question from question-answers string")
@@ -27,9 +29,9 @@ public class QuestionExtractionServiceTest {
   public void shouldCorrectlyExtractListOfAnswers() {
     String testInput = "What is Peters favorite food? \"Pizza\" \"Spaghetti\" \"Ice cream\"";
     Question question = extractionService.extractQuestion(testInput);
-    List<String> answers = question.getAnswers();
+    List<Answer> answers = question.getAnswers();
 
-    assertThat(answers).containsExactlyInAnyOrder("Pizza", "Spaghetti", "Ice cream");
+    assertThat(answers).extracting(Answer::getAnswer).containsExactlyInAnyOrder("Pizza", "Spaghetti", "Ice cream");
   }
 
   @Test
@@ -65,5 +67,26 @@ public class QuestionExtractionServiceTest {
 
     assertThat(thrown).isInstanceOf(IllegalArgumentException.class);
     assertThat(thrown.getMessage()).isEqualTo("Question should have at-least one answer");
+  }
+
+  @Test
+  @DisplayName("Should throw exception if question is null")
+  public void shouldThrowExceptionWhenQuestionIsNull() {
+
+    Throwable thrown = catchThrowable(() -> extractionService.extractQuestion(null));
+
+    assertThat(thrown).isInstanceOf(IllegalArgumentException.class);
+    assertThat(thrown.getMessage()).isEqualTo("Invalid question format");
+  }
+
+  @Test
+  @DisplayName("Should throw exception if question is empty")
+  public void shouldThrowExceptionWhenQuestionIsEmpty() {
+    String testInput = " ";
+
+    Throwable thrown = catchThrowable(() -> extractionService.extractQuestion(testInput));
+
+    assertThat(thrown).isInstanceOf(IllegalArgumentException.class);
+    assertThat(thrown.getMessage()).isEqualTo("Invalid question format");
   }
 }

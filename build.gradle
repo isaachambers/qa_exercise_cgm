@@ -1,8 +1,6 @@
 plugins {
     id 'java'
     id 'jacoco'
-    id 'com.palantir.docker' version '0.25.0'
-    id 'com.palantir.docker-run' version '0.25.0'
 }
 
 group 'cgm_exercise'
@@ -17,7 +15,12 @@ repositories {
 dependencies {
     testCompile("org.assertj:assertj-core:3.9.0")
     testCompile("org.junit.jupiter:junit-jupiter-engine:5.3.2")
-    testCompile('org.junit.jupiter:junit-jupiter:5.6.0')
+    testCompile("org.junit.jupiter:junit-jupiter:5.6.0")
+//    testCompile("org.mockito:mockito-all:1.9.5")
+// https://mvnrepository.com/artifact/org.mockito/mockito-inline
+    testCompile group: 'org.mockito', name: 'mockito-inline', version: '3.4.6'
+
+
 }
 
 test {
@@ -35,17 +38,4 @@ jacocoTestReport {
         csv.enabled false
         html.destination file("${buildDir}/jacocoHtml")
     }
-}
-
-jar {
-    baseName = 'qa_exercise'
-    version = version
-}
-
-String imageName = "demo/qa-exercise:$version"
-
-docker {
-    name imageName
-    files "build/libs/${jar.archiveFileName.get()}"
-    buildArgs([JAR_FILE: jar.archiveFileName.get()])
 }

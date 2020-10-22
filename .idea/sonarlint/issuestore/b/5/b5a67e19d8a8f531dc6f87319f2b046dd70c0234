@@ -1,0 +1,29 @@
+
+Ssquid:S1481"0Remove this unused "keepRunning" local variable.(™Éçüÿÿÿÿÿ8©ÏÕéÔ.
+[
+squid:S106("9Replace this use of System.out or System.err by a logger.(­­ì€üÿÿÿÿ8‰ÜéÔ.
+nsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8©ÏÕéÔ.
+[
+squid:S106+"9Replace this use of System.out or System.err by a logger.(ªêôçıÿÿÿÿ8çØÜéÔ.
+[squid:S1197"8Move the array designator from the variable to the type.(¡şÏÖøÿÿÿÿ8úúıÀÔ.
+i
+squid:S128/"LEnd this switch case with an unconditional break, return or throw statement.(¡È›8úúıÀÔ.
+V
+squid:S106<"9Replace this use of System.out or System.err by a logger.(áïÉÂ8úúıÀÔ.
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Œ‘í×ÿÿÿÿÿ8©ÏÕéÔ.
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÆÀ¹³8úúıÀÔ.
+[
+squid:S1061"9Replace this use of System.out or System.err by a logger.(—±©şÿÿÿÿ8úúıÀÔ.
+Osquid:S1602'",Remove useless curly braces around statement(ßÙ§âûÿÿÿÿ8‰ÜéÔ.
+]squid:S18540"?Remove this useless assignment to local variable "keepRunning".(“Õı8©ÏÕéÔ.
+[
+squid:S106;"9Replace this use of System.out or System.err by a logger.(äŒÄ¡şÿÿÿÿ8úúıÀÔ.
+U
+squid:S106"9Replace this use of System.out or System.err by a logger.(’¯µY8úúıÀÔ.
+V
+squid:S106:"9Replace this use of System.out or System.err by a logger.(Ì™ã¦8úúıÀÔ.
+V
+squid:S106""9Replace this use of System.out or System.err by a logger.(–îÑØ8úúıÀÔ.
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(µ—¢¶şÿÿÿÿ8úúıÀÔ.

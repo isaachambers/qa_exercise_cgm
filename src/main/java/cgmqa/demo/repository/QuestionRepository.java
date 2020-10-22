@@ -7,19 +7,10 @@ import java.util.Optional;
 
 public class QuestionRepository {
 
-  private static QuestionRepository questionRepository;
-  private List<Question> questions;
+  public static List<Question> questions = new ArrayList<>();
 
-  private QuestionRepository() {
-    questions = new ArrayList<>();
-  }
+  public QuestionRepository() {
 
-  public static QuestionRepository getInstance() {
-
-    if (questionRepository == null) {
-      questionRepository = new QuestionRepository();
-    }
-    return questionRepository;
   }
 
   public void addQuestion(Question question) {
