@@ -57,7 +57,7 @@ class AppTest {
 
       App.main(args);
 
-      mocked.verify(times(1), () -> OutputInputUtil.printMessage("• answer1"));
+      mocked.verify(times(1), () -> OutputInputUtil.printMessage("\u2022 answer1"));
     }
   }
 }
