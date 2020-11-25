@@ -30,6 +30,7 @@ public class QuestionExtractorImpl implements QuestionExtractor {
 
   @Override
   public Question extractQuestion(String questionAnswersString) {
+
     if (questionAnswersString == null || questionAnswersString.trim().length() == 0) {
       throw new IllegalArgumentException("Invalid question format");
     } else {
@@ -37,9 +38,10 @@ public class QuestionExtractorImpl implements QuestionExtractor {
       String question = questionAnswersString.substring(0, questionAnswersString.indexOf(separator) + 1);
       if (question.length() > 255) {
         throw new IllegalArgumentException("Question should contain upto 255 characters");
-      } else if (question == null || question.length() == 0) {
+      } else if (question.length() == 0) {
         throw new IllegalArgumentException("Invalid question format");
       }
+
       String answersString = questionAnswersString.substring(questionAnswersString.indexOf(separator) + 1);
       List<Answer> answers = extractAnswers(answersString);
 

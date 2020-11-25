@@ -158,6 +158,151 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/Dockerfile">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/main/java/com/rigapi/web/controller/CustomerController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/main/java/com/rigapi/web/controller/OrderController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/main/java/com/rigapi/web/controller/ProductController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/main/java/com/rigapi/web/request/CreateCustomerRequest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/main/java/com/rigapi/web/request/CreateOrUpdateProductRequest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/main/java/com/rigapi/web/request/CreateOrderRequest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/main/java/com/rigapi/web/request/OrderDetailsRequest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/main/resources/application-LOCAL.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/main/resources/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/IntegrationTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/service/impl/CustomerServiceImplTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/service/impl/CustomerServiceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/service/impl/OrderServiceImplTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/service/impl/OrderServiceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/service/impl/ProductServiceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/testmixin/ApiClientTestMixin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/testmixin/ApiClientTestUtilityMixin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/testmixin/DatabaseCleaningTestMixin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/testmixin/JsonTestMixin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/testmixin/TestUtilityMixin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/web/controller/CustomerControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/web/controller/OrderControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/web/controller/ProductControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/web/controller/ProductControllerTestUtility.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rig-api/src/test/java/com/rigapi/web/controller/UserInfoControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/promethean-tech_ws/security-api/src/test/java/integration/controller/AuthenticationControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/promethean-tech_ws/security-api/src/test/java/testsupport/IntegrationTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/a.dummy">
           <value>
             <set />

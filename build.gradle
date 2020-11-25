@@ -13,8 +13,8 @@ repositories {
 }
 
 dependencies {
-    testCompile("org.assertj:assertj-core:3.9.0")
     testCompile("org.junit.jupiter:junit-jupiter-engine:5.3.2")
+    testCompile("org.assertj:assertj-core:3.9.0")
     testCompile("org.junit.jupiter:junit-jupiter:5.6.0")
 //    testCompile("org.mockito:mockito-all:1.9.5")
 // https://mvnrepository.com/artifact/org.mockito/mockito-inline
@@ -28,7 +28,7 @@ test {
     beforeTest { descriptor ->
         logger.lifecycle("Running test: ${descriptor}")
     }
-    finalizedBy jacocoTestReport
+    finalizedBy(jacocoTestReport, jacocoTestCoverageVerification)
 }
 
 jacocoTestReport {
@@ -37,5 +37,15 @@ jacocoTestReport {
         xml.enabled false
         csv.enabled false
         html.destination file("${buildDir}/jacocoHtml")
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.97
+            }
+        }
     }
 }

@@ -19,6 +19,7 @@ public class QuestionExtractorImplTest {
   @DisplayName("Should correctly extract question from question-answers string")
   public void shouldCorrectlyExtractQuestion() {
     String testInput = "What is Peters favorite food? \"Pizza\" \"Spaghetti\" \"Ice cream\"";
+
     Question question = extractionService.extractQuestion(testInput);
 
     assertThat(question.getQuestion()).isEqualTo("What is Peters favorite food?");
@@ -29,6 +30,7 @@ public class QuestionExtractorImplTest {
   public void shouldCorrectlyExtractListOfAnswers() {
     String testInput = "What is Peters favorite food? \"Pizza\" \"Spaghetti\" \"Ice cream\"";
     Question question = extractionService.extractQuestion(testInput);
+
     List<Answer> answers = question.getAnswers();
 
     assertThat(answers).extracting(Answer::getAnswer).containsExactlyInAnyOrder("Pizza", "Spaghetti", "Ice cream");

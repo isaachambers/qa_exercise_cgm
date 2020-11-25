@@ -30,9 +30,7 @@ public class App {
         String questionString = OutputInputUtil.getInputLineAsString();
         Optional<Question> question = questionResponseService.getQuestionByName(questionString);
         if (question.isPresent()) {
-          question.get().getAnswers().forEach(answer -> {
-            OutputInputUtil.printMessage("\u2022 " + answer.getAnswer());
-          });
+          question.get().getAnswers().forEach(answer -> OutputInputUtil.printMessage("\u2022 " + answer.getAnswer()));
         } else {
           OutputInputUtil.printMessage("the answer to life, universe and everything is 42");
         }
